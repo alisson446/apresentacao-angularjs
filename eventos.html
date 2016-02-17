@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="apl">
+<head>
+	<title>eventos</title>
+	<meta charset="utf-8" />
+
+	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
+
+	<script type="text/javascript">
+		angular.module("apl", []);
+
+		angular.module("apl").controller("ctrl", function($scope) {
+			$scope.push = function(nome) {
+				$scope.mensagem = "Olá "+nome;
+			}
+		});
+	</script>
+</head>
+
+<body ng-controller="ctrl">
+	<form method="post" ng-submit="push(nome)">
+		<label>digite seu nome: </label>
+		<input type="text" ng-model="nome" /><br/>
+
+		<input type="submit" ng-click="divClicada=true" ng-disabled="!nome" value="enviar">
+
+		<div ng-show="divClicada" style="background-color: #eee; width: 370px; margin-top: 10px;">
+			{{mensagem}}
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="apl">
+<head>
+	<title>diretivas</title>
+	<meta charset="utf-8" />
+
+	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
+
+	<script type="text/javascript">
+		angular.module("apl", []);
+
+		angular.module("apl").directive("diretiva", function() {
+			return {
+				require: 'ngModel',
+				link: function(scope, element, attrs, ctrl) {
+					var _formatCpf = function (cpf) {
+						cpf = cpf.replace(/[^0-9]+/g, "");
+						if(cpf.length > 3) {
+							cpf = cpf.substring(0,3) + "." + cpf.substring(3);
+						}
+						if(cpf.length > 7) {
+							cpf = cpf.substring(0,7) + "." + cpf.substring(7);
+						}
+						if(cpf.length > 11) {
+							cpf = cpf.substring(0,11) + "-" + cpf.substring(11,13);
+						}
+						return cpf;
+					};
+
+					element.bind("keyup", function () {
+						ctrl.$setViewValue(_formatCpf(ctrl.$viewValue));
+						ctrl.$render();
+					});
+				}
+			};
+		});
+
+		angular.module("apl").controller("ctrl", function($scope) {
+		});
+
+	</script>
+</head>
+
+<body ng-controller="ctrl">
+	<form method="post">
+		<label>digite seu cpf: </label>
+		<input type="text" ng-model="cpf" diretiva />
+	</form>
+</body>
+</html>

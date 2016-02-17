@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="apl">
+<head>
+	<title>expressões</title>
+	<meta charset="utf-8" />
+
+	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
+	<script type="text/javascript">
+		angular.module("apl", []);
+
+		angular.module("apl").controller("ctrl", function($scope) {});
+	</script>
+</head>
+<body ng-controller="ctrl">
+	<form action="" method="post">
+		<label>primeiro valor: </label>
+		<input type="text" ng-model="valor1" /><br/>
+
+		<label>segundo valor: </label>
+		<input type="text" ng-model="valor2" /><br/>
+
+		<p>Valores: {{valor1}} {{valor2 !=null ? "e" : ""}} {{valor2}}</p>
+	</form>
+</body>
+</html>
