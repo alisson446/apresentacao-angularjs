@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="apl">
+<head>
+	<title>diretivas</title>
+	<meta charset="utf-8" />
+
+	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
+
+	<script type="text/javascript">
+		angular.module("apl", []);
+
+		angular.module("apl").controller("ctrl", function($scope) {
+			$scope.clientes = [
+				{nome: 'francisco alisson cirino de oliveira', idade: '16', profissao: 'programador'},
+				{nome: 'marcos vinicius pereira silva', idade: '17', profissao: 'fisiculturista'}
+			]
+		});
+
+	</script>
+</head>
+
+<body ng-controller="ctrl">
+	<form method="post">
+		<table>
+			<tr>
+				<th>nome</th>
+				<th>idade</th>
+				<th>profissao</th>
+			</tr>
+
+			<tr ng-repeat="client in clientes">
+				<td>{{client.nome | limitTo: 19	}}{{client.nome.length > 19 ? "..." : "" }}</td>
+				<td>{{client.idade}}</td>
+				<td>{{client.profissao | uppercase}}</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
