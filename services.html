@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Serviços</title>
+    <script type="text/javascript" src="lib/angularJs/angular.js"></script>
+</head>
+    <script type="text/javascript">
+        var app = angular.module('myApp', []);
+    
+        app.factory('testFactory', function(){
+            return {
+                sayHello: function(text){
+                    return "Factory says \"Hello " + text + "\"";
+                }
+            }               
+        });
+
+        app.controller("HelloCtrl", function($scope, testFactory){
+             $scope.fromFactory = testFactory.sayHello("World");
+        });
+
+    </script>
+<body>
+    <div ng-controller="HelloCtrl">
+        <p>{{fromFactory}}</p>
+    </div>
+</body>
+</html>

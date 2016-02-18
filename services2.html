@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Servicos</title>
+</head>
+<body>
+	<script type="text/javascript">
+		angular.module("myApp", ['ngResource']);
+
+		angular.module("myApp").factory('Contatos',	['$resource', function($resource) {
+			return $resource('', {}, {
+				todos : {
+					method : 'GET',
+					url : 'http://localhost:8080/integration/index/todos',
+					isArray : true
+				}
+			});
+		}]);
+
+		angular.module("myApp").controller("ctrl", function($scope, Contatos) {
+			Contatos.todos(function(data) {
+				$scope.fluxos = angular.fromJson(data);
+			}
+		});	
+	</script>
+</body ng-controller="ctrl">
+	{{fluxos.nome}}
+</html>
