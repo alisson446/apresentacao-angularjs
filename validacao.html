@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="apl">
 <head>
-	<title>diretivas</title>
+	<title>validação</title>
 	<meta charset="utf-8" />
 
 	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
@@ -10,30 +10,45 @@
 		angular.module("apl", []);
 
 		angular.module("apl").controller("ctrl", function($scope) {
-			$scope.clientes = [
-				{nome: 'francisco alisson cirino de oliveira', idade: '16', profissao: 'programador'},
-				{nome: 'marcos vinicius pereira silva', idade: '17', profissao: 'fisiculturista'}
-			]
+			
 		});
 
 	</script>
 </head>
 
 <body ng-controller="ctrl">
-	<form method="post">
-		<table>
-			<tr>
-				<th>nome</th>
-				<th>idade</th>
-				<th>profissao</th>
-			</tr>
+	<form method="post" name='validationForm'>
 
-			<tr ng-repeat="client in clientes">
-				<td>{{client.nome | limitTo: 19	}}{{client.nome.length > 19 ? "..." : "" }}</td>
-				<td>{{client.idade}}</td>
-				<td>{{client.profissao | uppercase}}</td>
-			</tr>
-		</table>
+		<!-- validação do campo nome -->
+		<label>nome: </label>
+		<input type="text" ng-model='nome' name='nome' ng-required='true' />
+		<div ng-show='validationForm.nome.$error.required && validationForm.nome.$dirty'>
+			preenchimento do campo nome obrigatório
+		</div><br/>
+
+		<!-- validação do campo idade -->
+		<label>idade: </label>
+		<input type="number" min='0' max='100' name='idade' ng-required='true' ng-model='idade' />
+		<div ng-show='validationForm.idade.$error.required && validationForm.idade.$dirty'>
+			preenchimento do campo idade obrigatório
+		</div>
+
+		<div ng-show='validationForm.idade.$error.min || validationForm.idade.$error.max'>
+			digite um valor entre 0 e 100
+		</div><br/>
+
+		<!-- validação do campo whatsapp -->
+		<label>whatsapp: </label>
+		<input type="text" name='whatsapp' ng-model='whatsapp' ng-required='true' ng-pattern='/^\d{4,5}-\d{4}$/' />
+		<div ng-show='validationForm.whatsapp.$error.required && validationForm.whatsapp.$dirty'>
+			preenchimento do campo whatsapp obrigatório
+		</div>
+
+		<div ng-show='validationForm.whatsapp.$error.pattern && validationForm.whatsapp.$dirty'>
+			preencha o campo whatsapp no formato ddddd-dddd
+		</div><br/>
+
+		<input type='submit' value='enviar' />
 	</form>
 </body>
 </html>
