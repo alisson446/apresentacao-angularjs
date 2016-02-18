@@ -8,7 +8,8 @@
 
 	<script type="text/javascript">
 		angular.module("apl", []);
-
+		angular.module("apl").controller("ctrl", function($scope) {
+		});
 		angular.module("apl").directive("diretiva", function() {
 			return {
 				require: 'ngModel',
@@ -34,13 +35,8 @@
 				}
 			};
 		});
-
-		angular.module("apl").controller("ctrl", function($scope) {
-		});
-
 	</script>
 </head>
-
 <body ng-controller="ctrl">
 	<form method="post">
 		<label>digite seu cpf: </label>
