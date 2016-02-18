@@ -10,115 +10,131 @@
 
 	<div class="reveal">
 		<div class="slides">
-			<section>
+			<section style="margin-top:-2em;">
 				<h3>Introdução ao Angular JS</h3>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					AngularJS é um framework Javascript estruturado para aplicativos web dinâmicos. Ele deixa você usar o HTML como uma linguagem de template e o permite herdar a sintaxe do HTML para expressar seus componentes da aplicação de maneira limpa e clara. Os dados obrigatórios do Angular e a sua injeção de dependências eliminam muito do código que você não deveria ter escrito. E isso tudo acontece dentro do browser, fazendo dele um parceiro ideal com um servidor tecnológico.
 				</p>  
 			</section>
 
 			<section>
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					Angular é o que o HTML deveria ter sido, ou seja, projetado para aplicações. Apesar do HTML ser a grande linguagem declarativa para documentos estáticos, ela não contém muitas formas para a criação de um aplicativo. Desta forma, como eu enganaria o browser a fazer o que eu quero?
 				</p> 
 			</section>
-				
-			<section>
-				<h3>$scope</h3>
 
-				<p>
-					Este objeto é responsável por referenciar todo o modelo de seu sistema, carregando objetos e sendo utilizado para assistir expressões e propagar eventos. 
-				</p>
-			</section>
-
-			<section>
+			<section style="margin-top:-2em;">
 				<h3>Módulos</h3>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					Um módulo em AngularJS é o que define a sua aplicação, comportando-se como um container para diferentes partes dela e de seus controllers. Estes, por sua vez, provém do módulo criado.  
-				</p>
+				</p><br/>
+				<img src="imagens/modulo.jpg" />
 			</section>
 
-			<section>
-				<h3>Controladores</h3>
+			<section style="margin-top:-2em;">
+			<h3>Controladores</h3>				
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					Em Angular, um Controller é definido por uma função construtora Javascript que é usada para setar um argumento ao escopo.
-
 				</p>
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					Quando um Controller é chamado pelo DOM via diretiva "ng-controller", o Angular irá instanciar um novo objeto Controlador, usando as funções construtoras do Controller específico. Um novo escopo filho será criado a disponibilizado como um parâmetro injetável para o construtor do Controller como $scope.
 				</p>
+				
+				<img src="imagens/ctrl.jpg" />
 			</section>
 
-			<section>
+			<section style="margin-top:-2em;">
+				<h3>$scope</h3>
+
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
+					Este objeto é responsável por referenciar todo o modelo de seu sistema, carregando objetos e sendo utilizado para assistir expressões e propagar eventos. 
+				</p>
+
+				<img src="imagens/scope.jpg" />
+			</section>
+
+			<section style="margin-top:-2em;">
+				<h3>Cabeçalho</h3>
+
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
+					O cabeçalho básico para iniciar o seu projeto Angular se dá através da declaração de duas diretivas: ng-app e ng-controller; chamando respectivamente o nome dado ao módulo da aplicação e o controlador responsável pelo gerenciamento dos dados e do layout;
+				</p>
+				<img src="imagens/eventos.jpg" />	
+			</section>
+
+			<section style="margin-top:-2em;">
 				<h3>Diretivas</h3>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					O AngularJS deixa você herdar o HTML com adição de novos atributos chamados <strong>Diretivas</strong>. Estas mesmas, são inicializadas com o prefixo "ng-" e carregam instruções ou alguns elementos HTML nela. Desta forma, podemos reutilizar código em torno da nossso aplicação. O processo de criação de Diretivas é demosntrado abaixo: <!--ng-model-->
 				</p>
 			</section>
 
-			<section>
+			<section style="margin-top:-2em;">
 				<h3>Criando Diretivas</h3>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					O processso de criação de uma diretiva é bem simples, é necessário somente usar o seu módulo junto do comando "directive" seguida do construtor de sua aplicação. Ela terá que retornar um objeto ou qualquer comando que desejar.
 				</p>
 			</section>
 
-			<section>
-				<h3>Cabeçalho</h3>
-
-				<p>
-					O cabeçalho básico para iniciar o seu projeto Angular se dá através da declaração de duas diretivas: ng-app e ng-controller; chamando respectivamente o nome dado ao módulo da aplicação e o controlador responsável pelo gerenciamento dos dados e do layout;
-				</p>	
-			</section>
-
-			<section>
+			<section style="margin-top:-2em;">
 				<h3>Básico do Angular: Expressões</h3>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					Uma das grandes vantagens de se utilizar o Angular para construir o seu website dinâmico, é sua facilidade de escrever código por meio de suas expressões e eventos, além é claro, de você poder utilizar filtros para um melhor controle de seus dados. Abaixo, uma simples demonstração de uma maneira possível de manipular dados. 
 				</p>
+				<img src="imagens/expressoes.jpg" />
 			</section>
 
-			<section>
+			<section style="margin-top:-2em;">
 				<h3>Básico do Angular: eventos</h3>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					Alguns exemplos de eventos que podem ser chamados no próprio html: ng-click(), ng-submit(), ng-show, ng-hide.
 				</p>
+				<img src="imagens/eventos.jpg" />
 			</section>
 
-			<section>
+			<section style="margin-top:-2em;">
 				<h3>Avançando no Angular: filtros</h3>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					O filtros são utilizados para formatar valores de uma expressão para exibí-la ao usuário ou para assegurar a consistência dos dados a serem enviados ao banco. Sua sintaxe é simples e pode ser declarada na própria expressão que deseja manipulá-la.
 				</p>
+				<img src="imagens/filtros.jpg" />
 			</section>
 
-			<section>
+			<section style="margin-top:-2em;">
 				<h3>Validação de formulários</h3>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					A validação de seus formuláios consite, primeiramente, em o Angular assistir o que o usuário está digitando nos campos em tempo real por meio da diretiva "ng-model". 
 				</p>
 
-				<p>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
 					Usando a diretiva "ng-show", você poderá lançar uma mensagem ao usuário somente quando as infomações preenchidas tiverem incorretas, passando como condição o seguinte comando:
 				</p>
 			</section>
 
-			<section>
-				<h3>Sobre o autor</h3>
-   				<ol>
-					<li class="fragment">123</li>
-					<li class="fragment">456</li>
-					<li class="fragment">789</li>
-				</ol>
+			<section style="margin-top:-2em;">
+				<h3>Serviços</h3>
+				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				Serviços são objetos instanciados apenas uma vez pela app, somente quando necessários, 
+				que fornecem funções ou mantém o estado de alguma coisa.
+				Quando você cria um service, por padrão você precisa usar a injeção de dependência, 
+				caso contrário, você terá um erro de compilação.</p>
+			</section>
+			<section style="margin-top:-2em;">
+				<h3>Vantagens dos services</h3>
+				<ul>
+					<li>"Desinchar" o controller</li>
+					<li>Reutilização de código </li>
+					<li>Compartilhamento de dados entre os controllers</li>
+				</ul>
 			</section>
 		</div>
 	</div>
