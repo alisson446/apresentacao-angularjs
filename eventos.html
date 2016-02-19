@@ -5,6 +5,8 @@
 	<meta charset="utf-8" />
 
 	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
+	<link rel="stylesheet" href="lib/foundation/foundation.css" />
+	<link rel="stylesheet" href="lib/foundation/normalize.css" />
 
 	<script type="text/javascript">
 		angular.module("apl", []);
@@ -18,15 +20,24 @@
 </head>
 
 <body ng-controller="ctrl">
-	<form method="post" ng-submit="push(nome)">
-		<label>digite seu nome: </label>
-		<input type="text" ng-model="nome" /><br/>
+	<div class='row' style='margin-left: 30%; margin-top: 50px;'>
+		<form method="post" ng-submit="push(nome)" class='large-6 columns'>
+			<label>digite seu nome: </label>
+			<input type="text" ng-model="nome" /><br/>
 
-		<input type="submit" ng-click="divClicada=true" ng-disabled="!nome" value="enviar">
+			<input type="submit" class='button radius' style='float: right;' ng-click="divClicada=true" ng-disabled="!nome" value="enviar">
 
-		<div ng-show="divClicada" style="background-color: #eee; width: 370px; margin-top: 10px;">
-			{{mensagem}}
-		</div>
-	</form>
+			<div data-alert class="alert-box info radius" ng-show="divClicada" style="width: 270px">
+				{{mensagem}}
+				<a href="#" class="close" ng-click='divClicada=false'>&times;</a>
+			</div>
+		</form>
+	</div>
+
+	<script src="lib/foundation/vendor/jquery.js"></script>
+	<script src="lib/foundation/foundation.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
 </body>
 </html>

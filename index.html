@@ -5,6 +5,7 @@
 	<title>Angular JS</title>
 	<link rel="stylesheet" type="text/css" href="css/reveal.css" />
 	<link rel="stylesheet" type="text/css" href="css/theme/default.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
@@ -13,7 +14,7 @@
 			<section style="margin-top:-2em;">
 				<img src="imagens/angularjs.png" style="border: 0px solid #eeeeee;margin-bottom: 40px;" />
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					AngularJS é um framework Javascript estruturado para aplicativos web dinâmicos. Ele deixa você usar o HTML como uma linguagem de template e o permite herdar a sintaxe do HTML para expressar seus componentes da aplicação de maneira limpa e clara. Os dados obrigatórios do Angular e a sua injeção de dependências eliminam muito do código que você não deveria ter escrito. E isso tudo acontece dentro do browser, fazendo dele um parceiro ideal com um servidor tecnológico.
 				</p> 
 
@@ -22,16 +23,18 @@
 			<section>
 				<h3>Um pouco da história</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					O nome AngularJS se refere ao termo angle brackets, mais conhecido como tags (sinal de menor que ou maior que) “< >” tão utilizadas no HTML.
 				</p>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Algum tempo depois de ter criado o projeto do AngularJS o Miško Hevery foi trabalhar no Google num projeto chamado Google Feedback onde aplicou pela primeira vez seu framework num projeto do Google. Segundo o próprio criador do Angular o Google Feedback tinha 17 mil linhas de código quando ele assumiu o projeto e conseguiu reescrevê-lo completamente em apenas 3 semanas com pouco mais de 1.500 linhas de código.
 				</p>
 			</section>
 
 			<section>
+			<h3>Misko Hevery</h3>
+
 				<img src="imagens/Misko-Hevery.jpg">
 			</section>
 
@@ -51,7 +54,7 @@
 			<section>
 				<h3>Quem utiliza?</h3>
 
-				<p style="width:25em;text-align:justify;">
+				<p style="width:25em;text-align:justify;margin-left:0;">
 					Várias empresas estão usando o AngularJS como framework principal para desenvolvimento front-end, segundo a Libscore mais de 10.500 sites usam AngularJS hoje em dia.
 				</p>
 
@@ -65,7 +68,7 @@
 			</section>
 
 			<section>
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Angular é o que o HTML deveria ter sido, ou seja, projetado para aplicações. Apesar do HTML ser a grande linguagem declarativa para documentos estáticos, ela não contém muitas formas para a criação de um aplicativo. Desta forma, como eu enganaria o browser a fazer o que eu quero?
 				</p><br/>
 				<img src="imagens/meme.jpg" /> 
@@ -74,19 +77,19 @@
 			<section style="margin-top:-2em;">
 				<h3>Módulos</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Um módulo em AngularJS é o que define a sua aplicação, comportando-se como um container para diferentes partes dela e de seus controllers. Estes, por sua vez, provém do módulo criado.  
 				</p><br/>
 				<img src="imagens/modulo.jpg" />
 			</section>
 
 			<section style="margin-top:-2em;">
-			<h3>Controladores</h3>				
+				<h3>Controladores</h3>				
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Em Angular, um Controller é definido por uma função construtora Javascript que é usada para setar um argumento ao escopo.
 				</p>
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Quando um Controller é chamado pelo DOM via diretiva "ng-controller", o Angular irá instanciar um novo objeto Controlador, usando as funções construtoras do Controller específico. Um novo escopo filho será criado a disponibilizado como um parâmetro injetável para o construtor do Controller como $scope.
 				</p>
 				
@@ -96,7 +99,7 @@
 			<section style="margin-top:-2em;">
 				<h3>$scope</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Este objeto é responsável por referenciar todo o modelo de seu sistema, carregando objetos e sendo utilizado para assistir expressões e propagar eventos. Ele acaba se tornando o principal meio de comunicação entre a view da página e o seu javascript. 
 				</p>
 
@@ -106,7 +109,7 @@
 			<section style="margin-top:-2em;">
 				<h3>Cabeçalho</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					O cabeçalho básico para iniciar o seu projeto Angular se dá através da declaração de duas diretivas: ng-app e ng-controller; chamando respectivamente o nome dado ao módulo da aplicação e o controlador responsável pelo gerenciamento dos dados e do layout.
 				</p>
 				<img src="imagens/eventos.jpg" />	
@@ -115,7 +118,7 @@
 			<section>
 				<h3>Diretivas</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					O AngularJS deixa você herdar o HTML com adição de novos atributos chamados <strong>Diretivas</strong>. Estas mesmas, são inicializadas com o prefixo "ng-" e carregam instruções ou alguns elementos HTML nela. Desta forma, podemos reutilizar código em torno da nossso aplicação. Algumas das diretivas mais usadas são:  
 				</p>
 
@@ -131,7 +134,7 @@
 			<section style="margin-top:-2em;">
 				<h3>Criando Diretivas</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					O processso de criação de uma diretiva é bem simples, é necessário somente usar o seu módulo junto do comando "directive" seguida do construtor de sua aplicação. Ela terá que retornar um objeto ou qualquer comando que desejar.
 				</p>
 				<img src="imagens/directives.jpg" />
@@ -140,7 +143,7 @@
 			<section style="margin-top:-2em;">
 				<h3>Básico do Angular: Expressões</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Uma das grandes vantagens de se utilizar o Angular para construir o seu website dinâmico, é sua facilidade de escrever código por meio de suas expressões e eventos, além é claro, de você poder utilizar filtros para um melhor controle de seus dados. Abaixo, uma simples demonstração de uma maneira possível de manipular dados. 
 				</p>
 				<img src="imagens/expressoes.jpg" />
@@ -149,7 +152,7 @@
 			<section style="margin-top:-2em;">
 				<h3>Básico do Angular: eventos</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Alguns exemplos de eventos que podem ser chamados no próprio html: ng-click(), ng-submit(), ng-show, ng-hide.
 				</p>
 				<img src="imagens/eventos.jpg" />
@@ -158,11 +161,11 @@
 			<section>
 				<h3>Validação de formulários</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					A validação de seus formuláios consite, primeiramente, em o Angular assistir o que o usuário está digitando nos campos em tempo real por meio da diretiva "ng-model". 
 				</p>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Usando a diretiva "ng-show", você poderá lançar uma mensagem ao usuário somente quando as infomações preenchidas tiverem incorretas, passando como condição o seguinte comando:
 				</p>
 			</section>
@@ -174,7 +177,7 @@
 			<section style="margin-top:-2em;">
 				<h3>Avançando no Angular: filtros</h3>
 
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					O filtros são utilizados para formatar valores de uma expressão para exibí-la ao usuário ou para assegurar a consistência dos dados a serem enviados ao banco. Sua sintaxe é simples e pode ser declarada na própria expressão que deseja manipulá-la.
 				</p>
 				<img src="imagens/filtros.jpg" />
@@ -182,7 +185,7 @@
 
 			<section>
 				<h3>Serviços</h3>
-				<p style="width:35em;margin-left:-6em;text-align:justify;">
+				<p>
 					Serviços são objetos instanciados apenas uma vez pela app, somente quando necessários, 
 					que fornecem funções ou mantém o estado de alguma coisa.
 					Quando você cria um service, por padrão, você precisa injetar a dependência dele no seu controller, 
@@ -220,6 +223,4 @@
   	});
 	</script>
 </body>
-
-<!--Um Factory pode retornar qualquer tipo de dado, não existe uma maneira ou padrão explicito que você deva seguir para criar esses dados, você precisa somente retornar algo.-->
 </html>

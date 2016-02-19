@@ -5,6 +5,8 @@
 	<meta charset="utf-8" />
 
 	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
+	<link rel="stylesheet" href="lib/foundation/foundation.css" />
+	<link rel="stylesheet" href="lib/foundation/normalize.css" />
 	<script type="text/javascript">
 		angular.module("apl", []);
 
@@ -12,14 +14,18 @@
 	</script>
 </head>
 <body ng-controller="ctrl">
-	<form action="" method="post">
-		<label>primeiro valor: </label>
-		<input type="text" ng-model="valor1" /><br/>
+	<div class='row' style='margin-left: 30%; margin-top: 50px;'>
+		<form action="" method="post">
+			<div class='large-6 columns' style='margin-left: 60px;'>
+				<label>primeiro valor: </label>
+				<input type="text" ng-model="valor1" /><br/>
 
-		<label>segundo valor: </label>
-		<input type="text" ng-model="valor2" /><br/>
+				<label>segundo valor: </label>
+				<input type="text" ng-model="valor2" /><br/>
 
-		<p>Valores: {{valor1}} {{valor2 !=null ? "e" : ""}} {{valor2}}</p>
-	</form>
+				<p>Valores: {{valor1}} {{valor2 !=null ? "e" : ""}} {{valor2}}</p>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

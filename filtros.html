@@ -11,9 +11,9 @@
 
 		angular.module("apl").controller("ctrl", function($scope) {
 			$scope.clientes = [
-				{nome: 'francisco alisson cirino de oliveira', idade: '16', profissao: 'programador'},
-				{nome: 'marcos vinicius pereira silva', idade: '17', profissao: 'fisiculturista'}
-			]
+				{nome: 'FRANCISCO ALISSON CIRINO DE OLIVEIRA', idade: '17', profissao: 'programador'},
+				{nome: 'MARCOS VINÍCIUS PEREIRA DA SILVA', idade: '18', profissao: 'fisiculturista'}
+			];
 		});
 
 	</script>
@@ -29,9 +29,9 @@
 			</tr>
 
 			<tr ng-repeat="client in clientes">
-				<td>{{client.nome | limitTo: 19	}}{{client.nome.length > 19 ? "..." : "" }}</td>
+				<td>{{client.nome | limitTo: 19 | lowercase	}}{{client.nome.length > 19 ? "..." : "" }}</td>
 				<td>{{client.idade}}</td>
-				<td>{{client.profissao | uppercase}}</td>
+				<td>{{client.profissao | uppercase }}</td>
 			</tr>
 		</table>
 	</form>
