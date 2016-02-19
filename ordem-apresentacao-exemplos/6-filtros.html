@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="apl">
+<head>
+	<title>filtros</title>
+	<meta charset="utf-8" />
+
+	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
+	<link rel="stylesheet" href="lib/foundation/foundation.css" />
+	<link rel="stylesheet" href="lib/foundation/normalize.css" />
+
+	<script type="text/javascript">
+		angular.module("apl", []);
+
+		angular.module("apl").controller("ctrl", function($scope) {
+			$scope.clientes = [
+				{nome: 'FRANCISCO ALISSON CIRINO DE OLIVEIRA', idade: '17', profissao: 'programador'},
+				{nome: 'MARCOS VINÍCIUS PEREIRA DA SILVA', idade: '18', profissao: 'fisiculturista'}
+			];
+		});
+
+	</script>
+</head>
+
+<body ng-controller="ctrl">
+	<div class='row' style='margin-left: 30%; margin-top: 100px;'>
+		<form method="post">
+			<table class='large-6 columns'>
+				<tr>
+					<th>nome</th>
+					<th>idade</th>
+					<th>profissao</th>
+				</tr>
+
+				<tr ng-repeat="client in clientes">
+					<td>{{client.nome | limitTo: 19 | lowercase	}}{{client.nome.length > 19 ? "..." : "" }}</td>
+					<td>{{client.idade}}</td>
+					<td>{{client.profissao | uppercase }}</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<script src="lib/foundation/vendor/jquery.js"></script>
+	<script src="lib/foundation/foundation.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+</body>
+</html>
