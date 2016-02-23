@@ -1,28 +1,36 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
+<!doctype html>
+<html lang="en" ng-app="myApp">
 <head>
-	<title>Servicos</title>
+    <meta charset="UTF-8">
+    <title>Angular</title>
+    <script src="../lib/angularJs/angular.js"></script>
+    <script type="text/javascript">
+        angular.module("myApp", []);
+
+        angular.module("myApp").factory('Contatos', function($http) {
+            var _getContatos = function () { //"_" significa que é do tipo private
+                return $http.get("json.json");
+            };
+
+            return {
+                getContatos: _getContatos,
+            };
+        });
+
+        angular.module("myApp").controller("ctrl", function($scope, Contatos) {
+            Contatos.getContatos().success(function(data){
+                $scope.fluxos = data;
+            });
+        }); 
+    </script>
 </head>
 <body>
-	<script type="text/javascript">
-		angular.module("myApp", ['ngResource']);
-
-		angular.module("myApp").factory('Contatos',	['$resource', function($resource) {
-			return $resource('', {}, {
-				todos : {
-					method : 'GET',
-					url : 'http://localhost:8080/integration/index/todos',
-					isArray : true
-				}
-			});
-		}]);
-
-		angular.module("myApp").controller("ctrl", function($scope, Contatos) {
-			Contatos.todos(function(data) {
-				$scope.fluxos = angular.fromJson(data);
-			}
-		});	
-	</script>
-</body ng-controller="ctrl">
-	{{fluxos.nome}}
+    <div ng-controller="ctrl">
+        <ul class="artistlist">
+            <li class="artist cf" ng-repeat="fluxo in fluxos">
+                    <h2>{{fluxo.nome}}</h2>
+            </li>
+        </ul>
+    </div>
+</body>
 </html>
