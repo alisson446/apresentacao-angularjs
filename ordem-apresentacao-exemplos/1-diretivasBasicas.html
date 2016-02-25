@@ -5,8 +5,7 @@
 	<meta charset="utf-8" />
 
 	<script type="text/javascript" src="../lib/angularJs/angular.js"></script>
-	<link rel="stylesheet" href="../lib/foundation/foundation.css" />
-	<link rel="stylesheet" href="../lib/foundation/normalize.css" />
+	<link rel="stylesheet" href="../lib/bootstrap.css" />
 
 	<style type="text/css">
 		.selecionado {
@@ -42,12 +41,13 @@
 	</script>
 </head>
 
-<body ng-controller="ctrl" ng-init="titulo='diretivas básicas'">
-	<div class='row' style='margin-left: 30%; margin-top: 40px;'>
+<body ng-controller="ctrl" ng-init="titulo='Diretivas Básicas'">
+	<div class='row'><br/>			
+		<div class="col-md-6 col-md-offset-3">
 		<h3>{{titulo}}</h3>
 
 		<form method="post">
-			<table class='large-8 columns'>
+			<table class='table'>
 				<tr>
 					<th></th>
 					<th>nome</th>
@@ -63,27 +63,24 @@
 				</tr>
 			</table><br/>
 
-			<div class='large-6 columns' style='margin-left: 60px;'>
-				<label>nome: </label>
-				<input type="text" ng-model='cliente.nome' />
+			<div class='col-md-7 col-md-offset-3'>
+				<label>Nome: </label>
+				<input type="text" class="form-control" ng-model='cliente.nome' /><br/>
 
-				<label>idade: </label>
-				<input type="number" ng-model='cliente.idade' />
+				<label>Idade: </label>
+				<input type="number" class="form-control" ng-model='cliente.idade' /><br/>
 
-				<label>profissao: </label>
-				<select ng-model='cliente.profissao' ng-options='job.nome for job in profissoes'>
+				<label>Profissao: </label>
+				<select ng-model='cliente.profissao' class="form-control" ng-options='job.nome for job in profissoes'>
 					<option></option>
 				</select>
 
-				<button ng-click='adicionar(cliente)' style='margin-top: 10px; float: right;'>adicionar</button>
+				<button class="btn btn-info" ng-click='adicionar(cliente)' style='margin-top: 10px; float: right;'>adicionar</button>
 			</div>
 		</form>
 	</div>
-
+	</div>
 	<script src="../lib/foundation/vendor/jquery.js"></script>
-	<script src="../lib/foundation/foundation.min.js"></script>
-	<script>
-		$(document).foundation();
-	</script>
+	<script src="../lib/bootstrap.js"></script>
 </body>
 </html>
