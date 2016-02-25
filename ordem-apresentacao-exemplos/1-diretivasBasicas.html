@@ -8,6 +8,15 @@
 	<link rel="stylesheet" href="../lib/foundation/foundation.css" />
 	<link rel="stylesheet" href="../lib/foundation/normalize.css" />
 
+	<style type="text/css">
+		.selecionado {
+			background-color: gray;
+		}
+		.negrito {
+			font-weight: bold;
+		}
+	</style>
+
 	<script type="text/javascript">
 		angular.module("apl", []);
 
@@ -27,6 +36,8 @@
 			$scope.adicionar = function(cliente) {
 				$scope.clientes.push(angular.copy(cliente));
 			};
+
+			
 		});
 	</script>
 </head>
@@ -38,12 +49,14 @@
 		<form method="post">
 			<table class='large-8 columns'>
 				<tr>
+					<th></th>
 					<th>nome</th>
 					<th>idade</th>
 					<th>profissao</th>
 				</tr>
 
-				<tr ng-repeat="client in clientes">
+				<tr ng-class="{'selecionado negrito': client.selecionado}" ng-repeat="client in clientes">
+					<td><input type="checkbox" ng-model="client.selecionado"/></td>
 					<td>{{client.nome}}</td>
 					<td>{{client.idade}}</td>
 					<td>{{client.profissao.nome}}</td>
