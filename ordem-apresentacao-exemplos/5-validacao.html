@@ -4,9 +4,9 @@
 	<title>validação</title>
 	<meta charset="utf-8" />
 
-	<script type="text/javascript" src="lib/angularJs/angular.js"></script>
-	<link rel="stylesheet" href="lib/foundation/foundation.css" />
-	<link rel="stylesheet" href="lib/foundation/normalize.css" />
+	<script type="text/javascript" src="../lib/angularJs/angular.js"></script>
+	<link rel="stylesheet" href="../lib/foundation/foundation.css" />
+	<link rel="stylesheet" href="../lib/foundation/normalize.css" />
 
 	<script type="text/javascript">
 		angular.module("apl", []);
@@ -51,7 +51,7 @@
 				preencha o campo whatsapp no formato ddddd-dddd
 			</div><br/>
 
-			<input type='submit' class='button radius' style='float: right;' value='enviar' />
+			<input type='submit' ng-disabled='validationForm.$invalid' class='button radius' style='float: right;' value='enviar' />
 		</form>
 	</div>
 
