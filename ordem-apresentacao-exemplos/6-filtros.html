@@ -13,8 +13,8 @@
 
 		angular.module("apl").controller("ctrl", function($scope) {
 			$scope.clientes = [
-				{nome: 'FRANCISCO ALISSON CIRINO DE OLIVEIRA', idade: '17', profissao: 'programador'},
-				{nome: 'MARCOS VINÍCIUS PEREIRA DA SILVA', idade: '18', profissao: 'fisiculturista'}
+				{nome: 'FRANCISCO ALISSON CIRINO DE OLIVEIRA', idade: '17', profissao: 'programador',preco:30, data:'2016-02-28'},
+				{nome: 'MARCOS VINÍCIUS PEREIRA DA SILVA', idade: '18', profissao: 'programador',preco:20, data:'2016-10-03'}
 			];
 		});
 
@@ -31,10 +31,12 @@
 					<th>profissao</th>
 				</tr>
 
-				<tr ng-repeat="client in clientes">
+				<tr ng-repeat="client in clientes | orderBy:'nome'">
 					<td>{{client.nome | limitTo: 19 | lowercase	}}{{client.nome.length > 19 ? "..." : "" }}</td>
 					<td>{{client.idade}}</td>
 					<td>{{client.profissao | uppercase }}</td>
+					<td>{{client.preco | currency}}</td>
+					<td>{{client.data | date}}</td>
 				</tr>
 			</table>
 		</form>
